@@ -8,8 +8,8 @@ function App() {
   return (
     // <BaiTapThucHanhLayout />
     // <BaiTapThuKinh />
-    // <BaiTapGioHang />
-    <BaiTapGioHangRedux />
+    <BaiTapGioHang />
+    // <BaiTapGioHangRedux />
   );
 }
 
