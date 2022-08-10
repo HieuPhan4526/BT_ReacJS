@@ -4,6 +4,7 @@ import BaiTapThuKinh from './BaiTapThuKinh/BaiTapThuKinh';
 import BaiTapGioHang from './BaiTapGioHang/BaiTapGioHang';
 import BaiTapGioHangRedux from './BaiTapGIoHangRedux/BaiTapGioHangRedux';
 import BaiTapQLSV from './BaiTapForm/BaiTapQLSV';
+import QuanLySinhVien from './BaiTapLifeCycle/QuanLySinhVien';
 
 function App() {
   return (
@@ -11,7 +12,8 @@ function App() {
     // <BaiTapThuKinh />
     // <BaiTapGioHang />
     // <BaiTapGioHangRedux />
-    <BaiTapQLSV />
+    // <BaiTapQLSV />
+    <QuanLySinhVien />
   );
 }
 
