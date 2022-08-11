@@ -12,8 +12,8 @@ function App() {
     // <BaiTapThuKinh />
     // <BaiTapGioHang />
     // <BaiTapGioHangRedux />
-    // <BaiTapQLSV />
-    <QuanLySinhVien />
+    <BaiTapQLSV />
+    // <QuanLySinhVien />
   );
 }
 

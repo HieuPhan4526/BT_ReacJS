@@ -49,6 +49,17 @@ export const QLSVLifeReducer = (state = stateDefault, action) => {
       }
       return { ...state };
     }
+    case "TIM_KIEM_SV": {
+      state.danhSachSinhVien = [...state.danhSachSinhVien];
+      let mangSVTimKiem = state.danhSachSinhVien.filter(
+        (sinhVien) =>
+          sinhVien.hoTen.toLowerCase() ===
+          action.sinhVienTK.hoTenTK.toLowerCase()
+      );
+      state.danhSachSinhVien = mangSVTimKiem;
+
+      return { ...state };
+    }
 
     default: {
       return { ...state };

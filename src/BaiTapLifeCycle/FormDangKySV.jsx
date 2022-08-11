@@ -65,7 +65,15 @@ class FormDangKySV extends Component {
       }
     }
     if (vali) {
-      this.props.themSinhVien(this.state.values);
+      this.props.themSinhVien(values);
+      this.setState({
+        values: {
+          maSV: "",
+          hoTen: "",
+          soDienThoai: "",
+          email: "",
+        },
+      });
     }
   };
   render() {
@@ -165,6 +173,14 @@ class FormDangKySV extends Component {
                   }
                   if (vali) {
                     this.props.capNhapSinhVien(values);
+                    this.setState({
+                      values: {
+                        maSV: "",
+                        hoTen: "",
+                        soDienThoai: "",
+                        email: "",
+                      },
+                    });
                   }
                 }}
                 type="button"
@@ -180,6 +196,12 @@ class FormDangKySV extends Component {
   }
 }
 
+const mapStateToProps = (rootReducer) => {
+  return {
+    //Trả về 1 props của component
+    sinhVienChiTiet: rootReducer.QLSVLifeReducer.sinhVienChiTiet,
+  };
+};
 const mapDispatchToProps = (dispatch) => {
   return {
     //Trả về 1 props(function) của component
@@ -197,13 +219,6 @@ const mapDispatchToProps = (dispatch) => {
       };
       dispatch(action);
     },
-  };
-};
-
-const mapStateToProps = (rootReducer) => {
-  return {
-    //Trả về 1 props của component
-    sinhVienChiTiet: rootReducer.QLSVLifeReducer.sinhVienChiTiet,
   };
 };
 

@@ -33,7 +33,6 @@ export const QuanLySinhVienReducer = (state = stateDefault, action) => {
     }
     case "THEM_SINH_VIEN": {
       state.danhSachSinhVien = [...state.danhSachSinhVien, action.sinhVien];
-
       return { ...state };
     }
     case "XOA_SINH_VIEN": {

@@ -3,6 +3,16 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 class TableDSSVLife extends Component {
+  state = {};
+  handleChangInput = (event) => {
+    let { name, value } = event.target;
+    // console.log(tenTK);
+
+    this.setState({
+      ...this.state,
+      [name]: value,
+    });
+  };
   renderTableSV = () => {
     let { danhSachSinhVien } = this.props;
     return danhSachSinhVien.map((sinhVien, index) => {
@@ -35,6 +45,7 @@ class TableDSSVLife extends Component {
     });
   };
   render() {
+    // console.log(this.state);
     return (
       <div>
         <div className="card">
@@ -43,14 +54,23 @@ class TableDSSVLife extends Component {
           </div>
           <div className="card-body">
             <div className="form-group d-flex flex-column align-items-end fe">
-              <label htmlFor="timKiem">Search SV</label>
               <input
                 style={{ width: "50%" }}
                 type="text"
                 className="form-control"
-                id="timKiem"
-                name="timKiem"
+                id="hoTenTK"
+                name="hoTenTK"
+                onChange={this.handleChangInput}
               />
+              <button
+                className="btn btn-danger"
+                style={{ position: "absolute" }}
+                onClick={() => {
+                  this.props.timKiemSinhVien(this.state);
+                }}
+              >
+                Find
+              </button>
             </div>
 
             <table className="table">
@@ -91,6 +111,13 @@ const mapDispatchToProps = (dispatch) => {
       const action = {
         type: "XEM_SINH_VIEN",
         sinhVienXem: sinhVienXem,
+      };
+      dispatch(action);
+    },
+    timKiemSinhVien: (sinhVienTK) => {
+      const action = {
+        type: "TIM_KIEM_SV",
+        sinhVienTK: sinhVienTK,
       };
       dispatch(action);
     },
